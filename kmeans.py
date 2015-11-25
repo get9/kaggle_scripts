@@ -35,8 +35,8 @@ X_reduce = pca.fit_transform(X)
 X_train, X_test, Y_train, Y_test = train_test_split(X_reduce, Y, test_size=0.20)
 
 # Start up a KMeans classifier
-clf = KMeans(n_clusters=15, n_init=100, max_iter=600, \
-        precompute_distances=True, copy_x=False)
+clf = KMeans(n_clusters=15, n_init=200, max_iter=600, \
+        precompute_distances=True, copy_x=False, n_jobs=-1)
 print('Fitting KMeans classifier')
 clf.fit(X_train, Y_train)
 Y_predict = clf.predict(X_test)
